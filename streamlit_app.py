@@ -27,7 +27,7 @@ if df is not None and gdf is not None:
     with coluna1:
         turno = st.selectbox('Selecione o turno', options=[1, 2])
         cargo = st.selectbox('Selecione o cargo', options=['Vereador', 'Prefeito'])
-        candidato = st.selectbox('Selecione o candidato', options=sorted(df[(df['DS_CARGO'] == cargo)]['NM_VOTAVEL'].unique()))
+        candidato = st.selectbox('Selecione o candidato', options=sorted(df[(df['DS_CARGO'] == cargo)&(df['NR_TURNO'] == turno)]['NM_VOTAVEL'].unique()))
 
     # Filtro para município, prefeito e primeiro turno
     filtro = (df['DS_CARGO'] == cargo) & (df['NR_TURNO'] == turno) & (df['NM_VOTAVEL'] == candidato)
