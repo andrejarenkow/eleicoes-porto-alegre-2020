@@ -61,7 +61,7 @@ if df is not None and gdf is not None:
 
     
 
-    token = 'pk.eyJ1IjoiYW5kcmUtamFyZW5rb3ciLCJhIjoiY2xkdzZ2eDdxMDRmMzN1bnV6MnlpNnNweSJ9.4_9fi6bcTxgy5mGaTmE4Pw'
+    token = st.secrets["token_mapbox"]
     px.set_mapbox_access_token(token)
 
     # Plotar com plotly.express o mapa
