@@ -74,6 +74,9 @@ if df is not None and gdf is not None:
         x = 'QT_VOTOS'
     )
 
+    top10
+
+    
     gdf_votos
 
 df
