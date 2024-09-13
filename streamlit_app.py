@@ -56,7 +56,8 @@ if df is not None and gdf is not None:
         hover_data=['NM_LOCAL_VOTACAO', 'QT_VOTOS'],
         title='Votos por local de votação Cláudia Araújo - 2020',
         labels={'QT_VOTOS': 'Votos'},
-        color_continuous_scale=px.colors.sequential.Oranges  # Tons de laranja
+        mapbox_style='dark',
+        color_continuous_scale=px.colors.sequential.GnBu_r,  # Tons de laranja
     )
 
     fig
