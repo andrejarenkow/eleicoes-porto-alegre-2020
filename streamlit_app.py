@@ -14,7 +14,7 @@ def buscando_dados():
   df = pd.read_csv('votacao_secao_2020_RS_POA.zip', sep = ';')
 
   #load o arquivo geojson e transformar em geodataframe
-  gdf = gpd.read_file('/content/locais_votacao.json')[['_', 'geometry']]
+  gdf = gpd.read_file('locais_votacao.json')[['_', 'geometry']]
 
   return df, gdf
 
