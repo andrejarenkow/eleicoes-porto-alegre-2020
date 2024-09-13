@@ -41,7 +41,8 @@ gdf_votos = gdf.merge(votos_por_local, left_on='_', right_on='DS_LOCAL_VOTACAO_E
 gdf_votos['lat'] = gdf_votos['geometry'].centroid.y
 gdf_votos['lon'] = gdf_votos['geometry'].centroid.x
 
-
+#mostrando
+gdf
 
 
 # Plotar com plotly.express o mapa
