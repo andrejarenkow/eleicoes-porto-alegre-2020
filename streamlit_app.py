@@ -42,7 +42,7 @@ gdf_votos['lat'] = gdf_votos['geometry'].centroid.y
 gdf_votos['lon'] = gdf_votos['geometry'].centroid.x
 
 #mostrando
-gdf
+gdf_votos
 
 
 # Plotar com plotly.express o mapa
