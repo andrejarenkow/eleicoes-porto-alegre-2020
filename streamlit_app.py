@@ -59,4 +59,4 @@ if df is not None and gdf is not None:
         color_continuous_scale=px.colors.sequential.Oranges  # Tons de laranja
     )
 
-    st.plotly_chart(fig)
+    fig
