@@ -88,7 +88,8 @@ if df is not None and gdf is not None:
     top10 = px.bar(
         gdf_votos.sort_values('QT_VOTOS', ascending=True).tail(10),
         y = 'NM_LOCAL_VOTACAO',
-        x = 'QT_VOTOS'
+        x = 'QT_VOTOS',
+        title = f'Top10 locais com mais votos para {candidato}'
     )
 
     coluna3.plotly_chart(top10)
