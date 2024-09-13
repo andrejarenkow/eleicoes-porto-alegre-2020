@@ -76,7 +76,3 @@ if df is not None and gdf is not None:
 
     top10
 
-    
-    gdf_votos
-
-df
