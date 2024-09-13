@@ -7,6 +7,9 @@ import plotly.express as px
 # Mostrar todas colunas
 pd.set_option('display.max_columns', None)
 
+# Layout
+coluna1, coluna2, coluna3 = st.columns([1,1,1])
+
 # Leitura do arquivo
 @st.cache_data
 def buscando_dados():
@@ -21,9 +24,10 @@ def buscando_dados():
 df, gdf = buscando_dados()
 
 if df is not None and gdf is not None:
-    turno = st.selectbox('Selecione o turno', options=[1, 2])
-    cargo = st.selectbox('Selecione o cargo', options=['Vereador', 'Prefeito'])
-    candidato = st.selectbox('Selecione o candidato', options=sorted(df[(df['DS_CARGO'] == cargo)]['NM_VOTAVEL'].unique()))
+    with coluna1:
+        turno = st.selectbox('Selecione o turno', options=[1, 2])
+        cargo = st.selectbox('Selecione o cargo', options=['Vereador', 'Prefeito'])
+        candidato = st.selectbox('Selecione o candidato', options=sorted(df[(df['DS_CARGO'] == cargo)]['NM_VOTAVEL'].unique()))
 
     # Filtro para município, prefeito e primeiro turno
     filtro = (df['DS_CARGO'] == cargo) & (df['NR_TURNO'] == turno) & (df['NM_VOTAVEL'] == candidato)
@@ -65,7 +69,7 @@ if df is not None and gdf is not None:
         color_continuous_scale=px.colors.sequential.GnBu_r,  # Tons de laranja
     )
 
-    fig
+    coluna2.plotly_chart(fig)
 
     # Top 10 locais com mais votos
     top10 = px.bar(
@@ -74,5 +78,8 @@ if df is not None and gdf is not None:
         x = 'QT_VOTOS'
     )
 
-    top10
+    coluna3.plotly_chart(top10)
+
+
+
 
