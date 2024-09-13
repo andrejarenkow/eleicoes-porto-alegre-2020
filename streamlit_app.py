@@ -67,6 +67,13 @@ if df is not None and gdf is not None:
 
     fig
 
+    # Top 10 locais com mais votos
+    top10 = px.bar(
+        gdf_votos,
+        y = 'NM_LOCAL_VOTACAO',
+        x = 'QT_VOTOS'
+    )
+
     gdf_votos
 
 df
