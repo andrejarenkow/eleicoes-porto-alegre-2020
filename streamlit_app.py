@@ -4,6 +4,17 @@ import pandas as pd
 import geopandas as gpd
 import plotly.express as px
 
+# Configurações da página
+st.set_page_config(
+    page_title="Eleiçoes POA - 2020",
+    #page_icon="",
+    layout="wide",
+    initial_sidebar_state='collapsed'
+) 
+col1, col2, col3 = st.columns([1,4,1])
+
+col2.header('Painel Eleições Porto Alegre 2020')
+
 # Mostrar todas colunas
 pd.set_option('display.max_columns', None)
 
