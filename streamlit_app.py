@@ -8,7 +8,7 @@ import plotly.express as px
 pd.set_option('display.max_columns', None)
 
 # Layout
-coluna1, coluna2, coluna3 = st.columns([1,1,1])
+coluna1, coluna2, coluna3 = st.columns([1,3,3])
 
 # Leitura do arquivo
 @st.cache_data
