@@ -59,9 +59,9 @@ if df is not None and gdf is not None:
         width=1000,
         center={'lat': -30.08, 'lon': -51.2},
         hover_data=['NM_LOCAL_VOTACAO', 'QT_VOTOS'],
-        title='Votos por local de votação Cláudia Araújo - 2020',
+        title=f'Votos por local de votação {candidato} - 2020',
         labels={'QT_VOTOS': 'Votos'},
-        mapbox_style='carto-darkmatter',
+        mapbox_style='dark',
         color_continuous_scale=px.colors.sequential.GnBu_r,  # Tons de laranja
     )
 
