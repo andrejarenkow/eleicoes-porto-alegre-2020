@@ -42,6 +42,8 @@ if df is not None and gdf is not None:
     gdf_votos['lat'] = gdf_votos['geometry'].centroid.y
     gdf_votos['lon'] = gdf_votos['geometry'].centroid.x
 
+    gdf_votos
+
     token = 'pk.eyJ1IjoiYW5kcmUtamFyZW5rb3ciLCJhIjoiY2xkdzZ2eDdxMDRmMzN1bnV6MnlpNnNweSJ9.4_9fi6bcTxgy5mGaTmE4Pw'
     px.set_mapbox_access_token(token)
 
