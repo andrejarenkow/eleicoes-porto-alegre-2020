@@ -40,8 +40,9 @@ if df is not None and gdf is not None:
     votos_por_local = df_municipio.groupby(['NM_LOCAL_VOTACAO', 'DS_LOCAL_VOTACAO_ENDERECO'])['QT_VOTOS'].sum().sort_values(ascending=False).reset_index()
 
     # Juntando
-    gdf_votos = gdf.merge(votos_por_local, left_on='_', right_on='DS_LOCAL_VOTACAO_ENDERECO').to_crs("EPSG:4326")
-
+    gdf_votos = gdf.merge(votos_por_local, left_on='_', right_on='DS_LOCAL_VOTACAO_ENDERECO')
+    gdf_votos.to_crs("EPSG:4326")
+    
     # Criar lat e lon
     gdf_votos['lat'] = gdf_votos['geometry'].centroid.y
     gdf_votos['lon'] = gdf_votos['geometry'].centroid.x
