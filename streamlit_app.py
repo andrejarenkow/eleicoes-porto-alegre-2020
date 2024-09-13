@@ -43,7 +43,7 @@ if df is not None and gdf is not None:
     gdf_votos['lon'] = gdf_votos['geometry'].centroid.x
 
     # Plotar com plotly.express o mapa
-    fig = px.scatter_map(
+    fig = px.scatter_mapbox(
         gdf_votos,
         lat='lat',
         lon='lon',
