@@ -68,3 +68,5 @@ if df is not None and gdf is not None:
     fig
 
     gdf_votos
+
+df
